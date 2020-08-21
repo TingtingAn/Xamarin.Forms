@@ -220,7 +220,7 @@ namespace Xamarin.Forms
 			return rowHeightSum;
 		}
 
-		Size ComputeCurrentSize() 
+		Size ComputeCurrentSize()
 		{
 			var columnWidthSum = ComputeColumnWidthSum();
 			var rowHeightSum = ComputeRowHeightSum();

@@ -10,7 +10,7 @@ namespace Xamarin.Forms
 	public class DropGestureRecognizer : GestureRecognizer
 	{
 		public static readonly BindableProperty AllowDropProperty = BindableProperty.Create(nameof(AllowDrop), typeof(bool), typeof(DropGestureRecognizer), false);
-		
+
 		public static readonly BindableProperty DragOverCommandProperty = BindableProperty.Create(nameof(DragOverCommand), typeof(ICommand), typeof(DragGestureRecognizer), null);
 
 		public static readonly BindableProperty DragOverCommandParameterProperty = BindableProperty.Create(nameof(DragOverCommandParameter), typeof(object), typeof(DragGestureRecognizer), null);
@@ -73,7 +73,7 @@ namespace Xamarin.Forms
 			DropCommand?.Execute(DropCommandParameter);
 			Drop?.Invoke(this, args);
 
-			if(!args.Handled)
+			if (!args.Handled)
 			{
 				var dataView = args.Data;
 				var internalProperties = dataView.PropertiesInternal;
@@ -103,7 +103,7 @@ namespace Xamarin.Forms
 					ib.Source = sourceTarget;
 				else if (Parent is Button b)
 					b.ImageSource = sourceTarget;
-				
+
 				Parent?.TrySetValue(text);
 			}
 		}

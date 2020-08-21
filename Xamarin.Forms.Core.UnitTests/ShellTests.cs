@@ -42,7 +42,7 @@ namespace Xamarin.Forms.Core.UnitTests
 
 			BaseShellItem shellElement = null;
 
-			if(useShellContent)
+			if (useShellContent)
 				shellElement = CreateShellContent(shellContentRoute: "TestMe");
 			else
 				shellElement = CreateShellSection(shellSectionRoute: "TestMe");
@@ -632,7 +632,7 @@ namespace Xamarin.Forms.Core.UnitTests
 
 		[Test]
 		public async Task OnBackbuttonPressedPageReturnsTrue()
-		{			
+		{
 			TestShell shell = new TestShell();
 
 			Routing.RegisterRoute("OnBackbuttonPressedFiresOnPage", typeof(ShellTestPage));
@@ -1135,7 +1135,7 @@ namespace Xamarin.Forms.Core.UnitTests
 		public async Task CantNavigateToNotVisibleShellItem()
 		{
 			var shell = new Shell();
-			var item1 = CreateShellItem(shellItemRoute:"NotVisible");
+			var item1 = CreateShellItem(shellItemRoute: "NotVisible");
 			var item2 = CreateShellItem();
 
 			shell.Items.Add(item1);
@@ -1614,7 +1614,7 @@ namespace Xamarin.Forms.Core.UnitTests
 			previousCount = count;
 			shell.CurrentItem.CurrentItem.Items.Add(CreateShellContent());
 			Assert.Greater(count, previousCount, "StructureChanged not fired when adding Shell Content");
-			
+
 		}
 
 

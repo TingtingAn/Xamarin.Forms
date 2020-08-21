@@ -55,7 +55,7 @@ namespace Xamarin.Forms.Platform.WPF
 			else if (e.PropertyName == DatePicker.FontAttributesProperty.PropertyName)
 				UpdateFontAttributes();
 		}
-		
+
 		void UpdateDate()
 		{
 			Control.SelectedDate = Element.Date;

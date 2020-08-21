@@ -25,7 +25,7 @@ namespace Xamarin.Forms.Controls.Issues
 			PushAsync(CreateRoot());
 		}
 		private ContentPage CreateRoot()
-		{ 
+		{
 			var button = new Button
 			{
 				AutomationId = "Issue9525Button",
@@ -48,7 +48,7 @@ namespace Xamarin.Forms.Controls.Issues
 					}
 				}
 			};
-			
+
 		}
 		private void Button_Clicked(object sender, System.EventArgs e)
 		{

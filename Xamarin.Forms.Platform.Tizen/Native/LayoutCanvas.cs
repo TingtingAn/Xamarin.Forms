@@ -1,8 +1,7 @@
 ﻿using System;
-using ElmSharp;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-
+using ElmSharp;
 using ELayout = ElmSharp.Layout;
 
 namespace Xamarin.Forms.Platform.Tizen.Native

@@ -273,7 +273,7 @@ namespace Xamarin.Forms.Platform.Android
 				return false;
 
 			var textTransform = _element.TextTransform;
-			
+
 			_renderer.View.SetAllCaps(textTransform == TextTransform.Default);
 
 			string oldText = view.Text;

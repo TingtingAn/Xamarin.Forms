@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Android.Content;
+using Android.Sax;
 using Android.Views;
+using Javax.Xml.Transform;
+using ADragFlags = Android.Views.DragFlags;
 using AUri = Android.Net.Uri;
 using AView = Android.Views.View;
-using ADragFlags = Android.Views.DragFlags;
-using System.IO;
-using Android.Sax;
-using Javax.Xml.Transform;
 
 namespace Xamarin.Forms.Platform.Android
 {
@@ -83,7 +83,7 @@ namespace Xamarin.Forms.Platform.Android
 				}
 
 				var view = GetView();
-				if(view != null && _dragSource.ContainsKey(view))
+				if (view != null && _dragSource.ContainsKey(view))
 				{
 					_dragSource.Remove(view);
 				}
@@ -186,7 +186,7 @@ namespace Xamarin.Forms.Platform.Android
 
 		void HandleDrop(object sender, DataPackage datapackage, ClipData clipData)
 		{
-			if(datapackage == null)
+			if (datapackage == null)
 			{
 				var clipItem = clipData.GetItemAt(0);
 
@@ -213,7 +213,7 @@ namespace Xamarin.Forms.Platform.Android
 				{
 					await rec.SendDrop(args, element);
 				}
-				catch(Exception e)
+				catch (Exception e)
 				{
 					Internals.Log.Warning(nameof(DropGestureRecognizer), $"{e}");
 				}
@@ -250,8 +250,8 @@ namespace Xamarin.Forms.Platform.Android
 				if (!args.Handled)
 				{
 					if (args.Data.Image != null)
-					{						
-						mimeTypes.Add("image/jpeg");						
+					{
+						mimeTypes.Add("image/jpeg");
 						item = ConvertToClipDataItem(args.Data.Image, mimeTypes);
 					}
 					else
@@ -291,7 +291,7 @@ namespace Xamarin.Forms.Platform.Android
 
 				var dragShadowBuilder = new AView.DragShadowBuilder(v);
 
-				if(Forms.IsNougatOrNewer)
+				if (Forms.IsNougatOrNewer)
 					v.StartDragAndDrop(data, dragShadowBuilder, v, (int)ADragFlags.Global | (int)ADragFlags.GlobalUriRead);
 				else
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -304,7 +304,7 @@ namespace Xamarin.Forms.Platform.Android
 		{
 			if (source is UriImageSource uriImageSource)
 			{
-				if(!mimeTypes.Contains(ClipDescription.MimetypeTextUrilist))
+				if (!mimeTypes.Contains(ClipDescription.MimetypeTextUrilist))
 					mimeTypes.Add(ClipDescription.MimetypeTextUrilist);
 
 				var aUri = AUri.Parse(uriImageSource.Uri.ToString());
